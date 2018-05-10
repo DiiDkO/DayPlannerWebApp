@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -67,11 +67,9 @@ body {
 				type="text" placeholder="Enter EventName" name="eventName" required><br><br>
 			<br> <label for="eventStartDateTime"><b>Start date
 					and time: </b>
-			<!-- 	<input id="datetime"> --> <input type="datetime-local"
-				name="eventStartDateTime"> <br>
-			<br></label> <br> <br> <label for="eventEndDateTime"><b>End
-					date and Time: </b>
-			<!-- <input id="datetime">--> <input type="datetime-local"
+			<input type="datetime-local" name="eventStartDateTime"> <br>
+			<br></label> <br> <br> <label for="eventEndDateTime"><b>End date and Time: </b>
+			<input type="datetime-local"
 				name="eventEndDateTime"><br>
 			<br> </label><br> <br> <label for="eventDescription"><b>Description:
 			</b></label> <input type="text" placeholder="Enter Event Description"
@@ -80,11 +78,5 @@ body {
 		</div>
 	</form>
 </body>
-<script src="jquery.datetimepicker.full.js">
-	
-</script>
-<script src="jquery.js"></script>
-<script>
-	$("#datetime").datetimepicker();
-</script>
+
 </html>

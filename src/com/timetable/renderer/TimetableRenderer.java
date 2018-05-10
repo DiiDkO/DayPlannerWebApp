@@ -129,13 +129,13 @@ public class TimetableRenderer {
 			int startHour = 0;
 			int endHour = 0;
 			for (Event e : events) {
-				int day = e.getStartTime().toLocalDateTime().toLocalDate().getDayOfMonth();
+				int day = e.getStartTime().toLocalDateTime().getDayOfMonth();
 				if (day == iterator) {
-					startHour = e.getStartTime().toLocalDateTime().toLocalTime().getHour();
-					endHour = e.getEndTime().toLocalDateTime().toLocalTime().getHour();
+					startHour = e.getStartTime().toLocalDateTime().getHour();
+					endHour = e.getEndTime().toLocalDateTime().getHour();
 					int duration = endHour - startHour;
 					eventsByHours.put(startHour, e);
-					while (duration != 0) {
+					while (duration > 0) {
 						eventsByHours.put(++startHour, e);
 						duration--;
 					}
