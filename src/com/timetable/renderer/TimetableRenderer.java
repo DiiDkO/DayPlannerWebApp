@@ -94,11 +94,13 @@ public class TimetableRenderer {
 		List<Event> events = new ArrayList<>(dbManager.getDataFromDateToDate(fromDate, toDate));
 		List<String> headers = new ArrayList<>(Arrays.asList("HOUR"));
 		headers.addAll(this.inputEventsFromDateToDateIntoList(fromDate, toDate));
+		System.out.println(headers);
 		HashMap<Integer, HashMap<Integer, Event>> eventsByDays = new HashMap<>();
 		List<List<String>> rows = new ArrayList<>();
 		int iterator = fromDate.getDayOfMonth();
 		eventsByDays = inputEventsByHoursIntoTable(toDate, events, iterator);
 		rows = inputEventsDescriptionOnRows(fromDate, toDate, eventsByDays, iterator);
+		System.out.println(rows);
 		return new PairHeadersData<List<String>, List<List<String>>>(headers, rows);
 	}
 

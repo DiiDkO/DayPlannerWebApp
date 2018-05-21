@@ -17,24 +17,29 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
+#myDiv {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 </style>
 </head>
-<h2 align="center">
-	<b><i>Day Planner</i></b>
-
-</h2>
 <body>
 	<form >
-		<div align="center">
+		<div align="center" id="myDiv">
+		<h1 align="center"> <b><i>Welcome to Day Planner</i></b></h1><br>
 			<div class="button">
-				<b><a href="http://localhost:8080/MyDayPlannerWeb/login.jsp"
+				<b><a href="login.jsp"
 					class="button">Log in</a></b>
 			</div>
 			
 			<div class="button">
 				<b><a
-					href="http://localhost:8080/MyDayPlannerWeb/registration.jsp"
+					href="registration.jsp"
 					class="button">Registration</a></b>
 			</div>
 		</div>

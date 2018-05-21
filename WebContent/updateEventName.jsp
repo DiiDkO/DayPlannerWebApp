@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link href="myStyle.css" rel="stylesheet" />
 <style>
 body {
 	background-color: lightgreen;
@@ -49,7 +49,6 @@ body {
 	cursor: pointer;
 	border-radius: 5px;
 }
-
 form {
   padding: 20px 0;
   position: relative;
@@ -102,11 +101,11 @@ form button:hover {
 </style>
 </head>
 <body>
-	<form action="EventsManager" method="post">
+<form action="EventsManager" method="post">
 		<b><button class="back">Back</button></b>
 	</form>
 	<h1 align="center">
-		<b>Delete Event</b>
+		<b>Update Event</b>
 	</h1>
 	<form action="EventsManager" method="get">
 		<div class="message" align="center">
@@ -114,21 +113,16 @@ form button:hover {
 			<c:remove var="message" scope="session" />
 		</div>
 		<div class="container" align="center">
-			<input type="hidden" name="operation" value="delEvent"> <br>
-			 <input type="text"	placeholder="Enter EventName" name="eventName" required><br>
-			<br> <label for="eventStartDateTime"><b>Start date and time: </b>
-			<input type="datetime-local" name="eventStartDateTime"></label> <br>
-			 <br> <label for="eventEndDateTime"><b>End date and Time: </b>
-			<input type="datetime-local" name="eventEndDateTime"></label><br><br>
-				<b><button class="submit">Delete</button></b>
+			<input type="hidden" name="operation" value="updateName"> <br>
+			<input type="text" placeholder="Enter event name" name="eventName" required><br>
+			<label for="eventStartDateTime"><b>Start date and time: </b>
+			<input type="datetime-local" name="eventStartDateTime"> </label><br>
+			<label for="eventEndDateTime"><b>End date and Time: </b>
+			<input type="datetime-local" name="eventEndDateTime"></label><br>
+			<input type="text" placeholder="Enter Event Description" name="eventDescription" required><br>
+			<input type="text" placeholder="Enter new event name" name="newEventName" required><br>
+			<b><button class="submit">Update</button></b>
 		</div>
 	</form>
 </body>
-<script src="jquery.datetimepicker.full.js">
-	
-</script>
-<script src="jquery.js"></script>
-<script>
-	$("#datetime").datetimepicker();
-</script>
 </html>

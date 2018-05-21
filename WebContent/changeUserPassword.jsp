@@ -22,6 +22,7 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 .submit {
@@ -34,6 +35,7 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 .back {
 	background-color: #4CAF50;
@@ -45,6 +47,57 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: #53e3a6;
+}
+form button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #53e3a6;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+form button:hover {
+  background-color: #f5f7f9;
 }
 </style>
 </head>
@@ -63,18 +116,10 @@ body {
 		</div>
 		 <input type="hidden" name="operation" value="changePass">
 		<div class="container" align="center">
-			<br> <label for="username"><b>Username: </b></label> <input
-				type="text" placeholder="Enter Username" name="username" required><br>
-			<br> <label for="password"> <b>Password: </b></label> <input
-				type="password" placeholder="Enter Password" name="password"
-				required><br> <br> 
-				 <label for="newPassword"><b>New Password: </b>
-			</label> <input type="password" placeholder="Enter New Password"
-				name="newPassword" required><br> <br>
-				<b>
-					<button class="submit">Submit</button>
-				</b>
-			<br>
+			<input	type="text" placeholder="Enter Username" name="username" required><br>
+			<input type="password" placeholder="Enter Password" name="password" required><br> 
+			<input type="password" placeholder="Enter New Password" name="newPassword" required><br>
+				<b><button class="submit">Submit</button></b><br>
 		</div>
 	</form>
 </body>

@@ -66,6 +66,7 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 </style>
@@ -91,7 +92,7 @@ body {
 					href="#">Update Menu <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a tabindex="-1" href="changeUserPassword.jsp">Change Password</a></li>
-						<li><a tabindex="-1" href="updateEvent.jsp">Update Event Name</a></li>
+						<li><a tabindex="-1" href="updateEventName.jsp">Update Event Name</a></li>
 						<li><a tabindex="-1" href="updateStartDateTime.jsp">Update Start Date and Time</a></li>
 						<li><a tabindex="-1" href="updateEndDateTime.jsp">Update End Time</a></li>
 						<li><a tabindex="-1" href="updateDescription.jsp">Update Description</a></li>
@@ -112,12 +113,12 @@ body {
 						<li><a tabindex="-1" href="viewDay.jsp">Events of Day</a></li>
 						<li><a tabindex="-1" href="viewEventsOfMonth.jsp">Events of Month</a></li>
 						<li><a tabindex="-1" href="viewEventsOfWeek.jsp">Events of Week </a></li>
-						<li><a tabindex="-1" href="viewEventsFromDateToDate.jsp">Events from Date to Date</a></li>
+ 						<li><a tabindex="-1" href="viewEventsFromDateToDate.jsp">Events from Date to Date</a></li> 
 					</ul>
 					</li>
 			</ul>
 			<div class="button">
-				<b><a href="http://localhost:8080/MyDayPlannerWeb"
+				<b><a href="index.html"
 					class="button">Log out</a></b>
 			</div>
 		</div>
@@ -158,6 +159,10 @@ body {
 				e.preventDefault();
 			});
 		});
+		
+		 setTimeout(function(){
+		       location.reload();
+		   },60000);
 	</script>
 </body>
 </html>

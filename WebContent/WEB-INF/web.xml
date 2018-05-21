@@ -19,7 +19,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>EventsManager</servlet-name>
-		<url-pattern>/events/*</url-pattern>
+		<url-pattern>/EventsManager/*</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -28,6 +28,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UserManager</servlet-name>
-		<url-pattern>/userOptions/*</url-pattern>
+		<url-pattern>/UserManager/*</url-pattern>
 	</servlet-mapping>
 </web-app>

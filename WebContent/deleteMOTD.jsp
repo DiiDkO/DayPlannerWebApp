@@ -23,6 +23,7 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 .submit {
@@ -35,6 +36,7 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 .back {
@@ -47,6 +49,57 @@ body {
 	display: inline-block;
 	margin: 4px 2px;
 	cursor: pointer;
+	border-radius: 5px;
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: #53e3a6;
+}
+form button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #53e3a6;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+form button:hover {
+  background-color: #f5f7f9;
 }
 </style>
 </head>
@@ -57,15 +110,14 @@ body {
 	
 	<h1 align="center">Delete MOTD</h1>
 	<form action="EventsManager" method="get">
-	<div class="message" align="center">
-		<b><font color="red"><c:out value="${message}" /></font></b>
-		<c:remove var="message" scope="session" />
+		<div class="message" align="center">
+			<b><font color="red"><c:out value="${message}" /></font></b>
+			<c:remove var="message" scope="session" />
 		</div>
 		<div class="container" align="center">
 			<input type="hidden" name="operation" value="delMOTD"> <br>
-			<label for="MOTDDate"><b>Date: </b></label> <input type="date"
-				name="MOTDDate"> <br>
-			<br> <br> <b><button class="submit">Delete
+			 <input type="date"	name="MOTDDate"> <br>
+			<br> <b><button class="submit">Delete
 					MOTD</button></b>
 		</div>
 	</form>

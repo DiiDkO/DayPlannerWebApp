@@ -132,14 +132,15 @@ public class DatabaseManager {
 	}
 
 	public boolean updateEventDescription(String descrip) throws SQLException, ClassNotFoundException {
-		String sqlStm = " UPDATE events SET description='" + descrip + "'"
+		String sqlStm = " UPDATE events SET description= ? "
 				+ " WHERE events.id= ? AND events.user_id = ? ;";
 		try (Connection conn = new JDBConnection().getConnection();
 				PreparedStatement preStm = conn.prepareStatement(sqlStm);
 				Statement stm = conn.createStatement()) {
 			stm.execute(databaseStm);
-			preStm.setInt(1, this.getEventIdFromDataBase());
-			preStm.setInt(2, this.getUserIdFromDataBase());
+			preStm.setString(1, descrip);
+			preStm.setInt(2, this.getEventIdFromDataBase());
+			preStm.setInt(3, this.getUserIdFromDataBase());
 			if (preStm.executeUpdate() == 1)
 				return true;
 			return false;
@@ -205,7 +206,7 @@ public class DatabaseManager {
 
 	// Select database data
 	public int getEventIdFromDataBase() throws SQLException, ClassNotFoundException {
-		String selectEventId = "SELECT id FROM events WHERE events.name= ?  AND events.startTime= ? AND events.endTime= ? ;";
+		String selectEventId = "SELECT id FROM events WHERE events.name= ?  AND events.startTime= ? AND events.endTime= ?  ;";
 		int event_id = 0;
 		try (Connection conn = new JDBConnection().getConnection();
 				PreparedStatement preStm = conn.prepareStatement(selectEventId);
